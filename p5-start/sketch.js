@@ -14,16 +14,6 @@ function setup() {
     ellipse(width/2, height/2, 100,100);
     background(0)
 
-    // console.log( "x: " + mouseX + "," + "y: " + mouseY)
-
-    if(mouseX < width/2){
-      mood = "dark";
-    } else {
-      mood = "light";
-    }
-
-    console.log(mood);
-
   }
   
   function windowResized() {
