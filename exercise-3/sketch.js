@@ -1,7 +1,5 @@
 let input, button, result, question, submit, answer;
 
-let Answer1;
-
 let colorInput = document.getElementById('color-input');
 
 function setup() {
@@ -56,20 +54,22 @@ function output() {
 
   let Answer1 = document.getElementById('answer-1');
   colorInput.appendChild(Answer1);
-  //Answer1.innerHTML = answers;
+  Answer1.innerHTML = answers;
 
-  if (answers == "blue"){
+  let a = createA('next.html', 'next');
+
+  if ((answers == "blue")){
     background(0,0,255);
     Answer1.innerHTML = answers;
-    let a = createA('next.html', 'next');
-    a.id('next');
-    colorInput.appendChild(next);
+    location.href = "next.html";
   } else if (answers == "red"){
     background(255,0,0);
     Answer1.innerHTML = answers;
   } else if (answers == "green"){
     background(0,255,0);
     Answer1.innerHTML = answers;
+  } else if (answers == "magenta"){
+    background(255,0,255);
   } else {
     Answer1.innerHTML = "i don't know that color";
   }
