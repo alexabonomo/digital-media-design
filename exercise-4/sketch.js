@@ -5,7 +5,7 @@ let violet, iris, jasmine;
 //declare variable up at the top
 let mySound1, mySound2, mySound3;
 
-var dragging = false; // Is the object being dragged?
+// var dragging = false; // Is the object being dragged?
 
 
 //load sounds before you use them
@@ -15,6 +15,7 @@ function preload(){
   mySound1 = loadSound('audio/Plantasia.mp3');
   mySound2 = loadSound('audio/fanfare.mp3');
   mySound3 = loadSound('audio/kirakira.mp3');
+
 }
 
 
@@ -71,6 +72,10 @@ function setup() {
       mySound3.play();
     }
   }
+
+  // function toggleSound(){
+  //   mySound1.play();
+  // }
 
   
   function windowResized() {
