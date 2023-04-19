@@ -2,9 +2,16 @@ let days = [];
 
 let weather, mood, desire;
 
+
+//images!
+let cat,bear;
+
 let enter, entered;
 
 let body = document.getElementById('html-body');
+
+//returns an array of all the html elements that are <img> tags
+const element = document.getElementsByTagName('img');
 
 let spacex = 0;
 let spacey = 0;
@@ -38,10 +45,22 @@ function windowResized() {
 }
 
 function glyph(){
+
+  background(0);
   if (weather == "sunny"){
-    fill(235, 219, 52)
+    //removes past image from html before drawing a new one
+    removeImg();
+    cat = createImg('images/cat.png');
+    cat.id('images');
+    cat.position(400,200);
+    console.log("draw cat")
+
   } else if ( weather == "gloomy"){
-    fill(64, 59, 156)
+    //removes past image from html before drawing a new one
+    removeImg();
+    bear = createImg('images/bearhug.png');
+    bear.id('images');
+    bear.position(400,200);
   }
   noStroke();
   rect(350+spacex, 400+spacey, 100, 100)
@@ -68,11 +87,15 @@ function glyph(){
     spacey += 200;
   }
 
-
+  if(element.length == 1){
+    console.log('working')
+    element[0].remove;
+  }
 
 }
 
 function add() {
+
   days.push({
     date: Date(),
     weather: weather,
@@ -82,5 +105,15 @@ function add() {
   console.log(days);
   console.log("day submitted")
 
+  console.log('weather: '+ weather);
+
   glyph();
+}
+
+function removeImg(){
+  //if there is an image, remove it before making a new one
+  if(element.length == 1){
+    //the first image in the array, remove it
+    element[0].remove();
+  }
 }

@@ -17,6 +17,7 @@ function setup() {
   
     if (mode == 1){
       //functions that pertain for mode 1 called here
+      displayCat();
       
     }
 
@@ -65,6 +66,20 @@ function setup() {
 
   function mousePressed(){
     //for functions that happen on mousePressed
+    if (mode == 1){
+      //functions that pertain for mode 1 called here
+      
+    }
+
+    if (mode == 2){
+      //functions that pertain for mode 2 called here
+      
+    }
+
+    if (mode == 3){
+      //functions that pertain for mode 3 called here
+      
+    }
 
   }
   
