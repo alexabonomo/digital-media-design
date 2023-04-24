@@ -1,4 +1,4 @@
-let mood;
+
 
 function setup() {
     // make the div called "mySketch" a p5.js canvas element

@@ -8,6 +8,8 @@ let cat,bear;
 
 let enter, entered;
 
+let text;
+
 let body = document.getElementById('html-body');
 
 //returns an array of all the html elements that are <img> tags
@@ -49,37 +51,56 @@ function glyph(){
   background(0);
   if (weather == "sunny"){
     //removes past image from html before drawing a new one
-    removeImg();
     cat = createImg('images/cat.png');
     cat.id('images');
+    cat.size(200,200);
     cat.position(400,200);
     console.log("draw cat")
 
+    text = createP('hello');
+    text.style('font-size', "16px")
+    text.position(410, 200);
+
+
   } else if ( weather == "gloomy"){
     //removes past image from html before drawing a new one
-    removeImg();
     bear = createImg('images/bearhug.png');
     bear.id('images');
-    bear.position(400,200);
+    bear.size(200,200);
+    bear.position(200,200);
   }
-  noStroke();
-  rect(350+spacex, 400+spacey, 100, 100)
   if (mood == 'happy'){
-    fill(255, 0, 247)
+    cat = createImg('images/cat.png');
+    cat.id('images');
+    cat.size(200,200);
+    cat.position(400,200);
+    console.log("draw cat")
   } else if (mood == 'sad'){
     fill(31, 96, 181)
+    bear = createImg('images/bearhug.png');
+    bear.id('images');
+    bear.size(200,200);
+    bear.position(200,200);S
   }
-  noStroke();
-  ellipse(300+spacex, 400+spacey, 100, 100)
   if(desire == "hug"){
-    stroke(87, 112, 250)
+    cat = createImg('images/cat.png');
+    cat.id('images');
+    cat.size(200,200);
+    cat.position(400,200);
+    console.log("draw cat")
+
+    text = createP('hello');
+    text.style('font-size', "16px")
+    text.position(410, 200);
+
   }else if (desire == "sleep"){
-    stroke(17, 6, 145)
+    bear = createImg('images/bearhug.png');
+    bear.id('images');
+    bear.size(200,200);
+    bear.position(200,200);
   } else if(desire =="nature"){
     stroke(25, 97, 17)
   }
-  strokeWeight(10);
-  line(250+spacex, 300+spacey, 450+spacex, 500+spacey)
   
   spacex += 200;
   if(spacex > 1000){
@@ -107,13 +128,15 @@ function add() {
 
   console.log('weather: '+ weather);
 
+  removeImg();
   glyph();
 }
 
 function removeImg(){
   //if there is an image, remove it before making a new one
-  if(element.length == 1){
+  if(element.length == 3){
     //the first image in the array, remove it
-    element[0].remove();
+    // for(){}
+    // element[0].remove();
   }
 }
